@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>When Does Crime Happen in San Francisco?</title>
+    <style>
+        body {
+            background-color: #1a1a2e;
+            color: white;
+            font-family: Arial;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #16c79a;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        img, iframe {
+            width: 100%;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            border: none;
+        }
+
+        .caption {
+            font-size: 0.9em;
+            color: #ccc;
+            margin-top: -10px;
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>When Does Crime Happen in San Francisco?</h1>
+
+<p>
+San Francisco publishes detailed records of police incident reports, covering different crime types, locations, and timestamps. 
+In this short data story, we explore <b>when crimes happen during the day</b> and how these patterns have evolved over time. 
+Understanding temporal patterns can reveal underlying social behavior — but also reflects policing practices, so interpretations should be made carefully.
+</p>
+
+<h2>Crime follows a daily rhythm</h2>
+
+<p>
+A clear pattern emerges when we look at how crime is distributed across the 24 hours of a day. Rather than being random, crime follows a structured daily cycle.
+</p>
+
+<img src="figures/hourly_distribution.png">
+
+<div class="caption">
+Figure 1: Distribution of crime types across hours of the day. Crime is lowest in the early morning (around 4–6 AM) and rises steadily throughout the day, peaking in the evening hours. Theft-related crimes dominate during daytime and evening, while late-night activity remains elevated compared to early morning.
+</div>
+
+<p>
+The early morning hours are consistently quiet, while activity increases throughout the day and peaks in the evening. This suggests that crime is closely tied to human activity patterns — when more people are out, more incidents occur.
+</p>
+
+<h2>Where do these patterns happen?</h2>
+
+<p>
+Temporal patterns alone do not tell the full story. Crime is also spatially concentrated, with certain areas consistently experiencing higher activity.
+</p>
+
+<iframe src="figures/crime_map.html"></iframe>
+
+<div class="caption">
+Figure 2: Geographic distribution of crime incidents in San Francisco. Crime is highly concentrated in central areas such as downtown and the Mission district, indicating clear spatial hotspots rather than uniform distribution across the city.
+</div>
+
+<p>
+These hotspots align with dense, high-activity neighborhoods. However, this does not necessarily mean more crime occurs there inherently — it may also reflect higher reporting rates and police presence.
+</p>
+
+<h2>Patterns are stable over time</h2>
+
+<p>
+To understand whether these daily rhythms have changed, we examine how hourly patterns evolve over multiple years.
+</p>
+
+<iframe src="figures/interactive_hourly_trends.html"></iframe>
+
+<div class="caption">
+Figure 3: Interactive visualization of hourly crime patterns over time. Despite year-to-year variation, the overall shape remains consistent: low activity in early morning and peaks in the evening. Users can explore individual years to compare trends.
+</div>
+
+<p>
+Even as total crime levels fluctuate, the overall daily structure remains remarkably stable. This suggests that crime timing is driven by persistent behavioral patterns rather than short-term changes.
+</p>
+
+<h2>What does this mean?</h2>
+
+<p>
+At first glance, one might conclude that evening hours are simply more “dangerous.” However, the data does not distinguish between changes in actual crime and changes in policing or reporting. 
+For example, increased patrols or targeted enforcement can create spikes in recorded incidents without reflecting underlying behavior.
+</p>
+
+<p>
+What we can say with confidence is that crime in San Francisco follows strong and consistent temporal and spatial patterns. 
+Understanding these patterns is useful — but interpreting them requires caution.
+</p>
+
+</body>
+</html>
