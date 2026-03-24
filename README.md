@@ -2,7 +2,9 @@
 
 ## Course Overview
 
-![Course Overview](CourseOverview.png)
+<p align="center">
+  <img src="misc/CourseOverview.png" alt="Course Overview" width="700"/>
+</p>
 
 ## Description
 
