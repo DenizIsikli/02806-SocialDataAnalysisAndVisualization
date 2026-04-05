@@ -123,11 +123,11 @@
 <h1>When Does Crime Happen in San Francisco?</h1>
 
 <p>
-The City of San Francisco publishes detailed records of police incident reports, documenting when and where crimes occur, as well as how they are categorized. This dataset spans multiple years and includes information such as timestamps, locations, and crime types, allowing us to analyze patterns across both time and space.
+The San Francisco Police Department publishes detailed records of police incident reports, documenting when and where crimes occur, as well as how they are categorized. This dataset spans multiple years and includes information such as timestamps, locations, and crime types, allowing us to analyze patterns across both time and space.
 </p>
 
 <p>
-In this short data story, we focus on a simple but important question: <strong>when does crime happen during the day?</strong> By examining how incidents are distributed across the 24 hours of a typical day, and how these patterns change (or remain stable) over time, we can uncover underlying structures in urban activity.
+In this short data story, we focus on a simple but important question: <strong><i>when does crime happen during the day?</i></strong> By examining how incidents are distributed across the 24 hours of a typical day, and how these patterns change (or remain stable) over time, we can uncover underlying structures in urban activity.
 </p>
 
 <p>
@@ -137,47 +137,47 @@ It is important to note that this dataset reflects <em>reported incidents</em>, 
 <h2>Crime follows a daily rhythm</h2>
 
 <p>
-Crime in San Francisco is not evenly distributed throughout the day. Instead, it follows a clear and repeatable daily cycle that reflects how people move, work, and interact within the city. By aggregating incidents across multiple years and normalizing within each crime type, we focus on when crimes occur rather than how often they occur overall.
+Crime in San Francisco is not evenly distributed throughout the day. Instead, it follows a clear and repeatable daily cycle that reflects how people move and interact within the city. By aggregating incidents across multiple years and normalizing within each crime type, we focus on when crimes occur rather than how often they occur overall.
 </p>
 
 <p>
-The figure below shows the <strong>average hourly distribution of different crime categories</strong>. Each line represents a specific crime type, normalized so that we focus on <em>when</em> crimes occur rather than how often they occur overall. This allows us to identify shared temporal structures across otherwise very different types of incidents.
+The figure below shows the <strong>average hourly distribution of different crime categories</strong>. Each line represents a specific crime type, normalized to highlight <em>when</em> incidents occur. This allows us to identify shared temporal patterns across different types of crime.
 </p>
 
 <img src="figures/hourly_distribution.png">
 
 <div class="caption">
-Figure 1: Average hourly distribution of crime types. Across categories, crime is consistently lowest in the early morning (around 4–6 AM), increases steadily throughout the day, and peaks in the late afternoon and evening hours.
+Figure 1: Average hourly distribution of crime types. Across categories, crime is consistently lowest in the early morning (around 4–6 AM), increases throughout the day, and peaks in the late afternoon and evening hours.
 </div>
 
 <p>
-One of the most important patterns to notice is the <strong>sharp drop in activity during the early morning hours</strong>. Between roughly 4 AM and 6 AM, all crime types reach their lowest levels. This likely reflects reduced human activity - fewer people are outside, businesses are closed, and overall interaction is minimal. As the day begins, activity gradually increases, suggesting a close relationship between crime and the presence of people in public spaces.
+One key pattern to notice is the sharp drop in activity during the early morning hours. Between roughly 4 AM and 6 AM, all crime types reach their lowest levels, likely reflecting reduced human activity. As the day begins, activity gradually increases, suggesting a close relationship between crime and the presence of people in public spaces.
 </p>
 
 <p>
-From late morning into the afternoon, most crime categories show a steady rise. However, the most pronounced increase occurs in the <strong>late afternoon and evening period (approximately 4 PM to 8 PM)</strong>, where multiple crime types reach their peak levels. This period corresponds to times when the city is most active: commuting, shopping, and social activities all contribute to increased opportunities for both interaction and conflict.
+From late morning into the afternoon, most crime categories rise steadily, with the most pronounced increase occurring in the late afternoon and evening (approximately 4 PM to 8 PM). This aligns with peak activity in the city, where commuting, shopping, and social interactions create more opportunities for incidents.
 </p>
 
 <p>
-While the general pattern is shared, there are also <strong>subtle differences between crime types</strong>. For example, theft-related crimes tend to peak slightly earlier in the evening, aligning with commercial activity, whereas other categories may extend later into the night. These differences suggest that while overall crime follows human activity, specific categories are influenced by more localized behaviors and contexts.
+While the overall pattern is shared, there are subtle differences between crime types. For example, theft-related crimes tend to peak slightly earlier in the evening, while others extend later into the night, reflecting differences in context and behavior.
 </p>
 
 <p>
-Importantly, this figure shows <em>relative timing</em>, not absolute risk. Because the data is normalized, a higher value does not necessarily mean that a crime type is more frequent overall - only that it is more likely to occur at that specific time of day. This distinction is critical when interpreting patterns and avoids misleading conclusions about which crimes are “most common.”
+Importantly, this figure shows <em>relative timing</em>, not absolute risk. A higher value indicates when a crime is more likely to occur, not how common it is overall.
 </p>
 
 <p>
-Overall, the key takeaway is that <strong>crime follows a structured and predictable daily rhythm</strong>, with low activity in the early morning and peaks during the most active hours of the day. This pattern suggests that crime is closely tied to routine human behavior, rather than occurring randomly throughout time.
+Overall, <strong>crime follows a structured and predictable daily rhythm</strong>, with low activity in the early morning and peaks during the most active hours of the day.
 </p>
 
 <h2>Where do these patterns happen?</h2>
 
 <p>
-Temporal patterns only tell part of the story. While we now understand <em>when</em> crime tends to occur, it is equally important to examine <strong>where these incidents are concentrated</strong>. Crime is not evenly distributed across San Francisco - instead, it forms clear spatial clusters that reflect the structure and activity of the city.
+Temporal patterns only tell part of the story. While we now understand <em>when</em> crime tends to occur, it is equally important to examine <strong>where these incidents are concentrated</strong>. Rather than being evenly distributed, crime forms clear spatial clusters shaped by the structure and activity of the city.
 </p>
 
 <p>
-The heatmap below aggregates all incidents and highlights areas with higher concentrations of reported crime. Warmer colors (yellow to red) indicate higher density, while cooler colors (blue) represent lower activity. Rather than a uniform spread, we observe a highly uneven distribution, with distinct hotspots emerging across the city.
+The heatmap below highlights areas with higher concentrations of reported crime. Warmer colors (yellow to red) indicate higher density, while cooler colors (blue) represent lower activity. Instead of a uniform spread, we observe distinct hotspots across the city.
 </p>
 
 <iframe src="figures/crime_map.html"></iframe>
@@ -187,103 +187,98 @@ Figure 2: Spatial distribution of crime incidents in San Francisco. High-density
 </div>
 
 <p>
-    One key pattern to notice is the strong concentration of incidents in the central parts of the city, compared to the much more dispersed patterns in residential areas.
+One key pattern to notice is the strong concentration of incidents in central areas, compared to the more dispersed patterns in residential neighborhoods.
 </p>
 
 <p>
-At a high level, the most prominent hotspot appears in the <strong>central and eastern parts of San Francisco</strong>, including areas such as downtown, SoMa, and the Mission district. These locations are characterized by high population density, commercial activity, and major transport routes - all factors that increase the likelihood of both interaction and reported incidents.
+The most prominent hotspot appears in the <strong>central and eastern parts of San Francisco</strong>, including downtown, SoMa, and the Mission district. These areas combine high population density, commercial activity, and major transport routes, increasing opportunities for interaction and reported incidents.
 </p>
 
 <p>
-If we zoom in on the <strong>downtown and Tenderloin area</strong>, the density becomes particularly clear. The grid-like street structure shows continuous clusters of activity along major corridors, suggesting that crime is not isolated to single points but rather spreads along highly trafficked streets. This aligns with expectations: areas with nightlife, retail, and transit hubs naturally generate more opportunities for incidents.
+If we zoom in on the <strong>downtown and Tenderloin area</strong>, the density becomes particularly clear. Crime clusters along major streets rather than appearing as isolated points, reflecting the importance of highly trafficked corridors.
 </p>
 
 <p>
-Moving slightly west, neighborhoods such as <strong>Pacific Heights and the Western Addition</strong> show noticeably lower intensity. While incidents are still present, they are more dispersed and less concentrated. This contrast highlights how crime density is closely tied to land use - residential areas tend to have lower and more scattered activity compared to commercial centers.
+Moving west, neighborhoods such as <strong>Pacific Heights and the Western Addition</strong> show lower intensity, with more dispersed incidents. This contrast highlights how crime density is closely tied to land use, with residential areas generally showing less concentrated activity.
 </p>
 
 <p>
-If we instead examine the <strong>Richmond and Sunset districts</strong> in the western part of the city, the pattern becomes even more sparse. Here, the heatmap reveals isolated points rather than continuous clusters. These neighborhoods are primarily residential, with fewer commercial hubs and less dense foot traffic, which likely contributes to the lower concentration of incidents.
+In the <strong>Richmond and Sunset districts</strong>, the pattern becomes even more sparse, with isolated points instead of continuous clusters. These areas are primarily residential, with less dense foot traffic and fewer commercial hubs.
 </p>
 
 <p>
-Looking toward the <strong>southern and southeastern areas</strong>, including parts of Bayview, we again observe localized clusters rather than widespread density. These appear around specific roads and intersections, suggesting that even in less dense areas, crime tends to concentrate around key infrastructural or commercial nodes rather than being evenly distributed.
+Looking toward the <strong>southern and southeastern areas</strong>, including parts of Bayview, we again observe localized clusters around specific roads and intersections, suggesting that even in less dense areas, crime concentrates around key nodes.
 </p>
 
 <p>
-Overall, the spatial distribution reinforces a key insight: <strong>crime is highly concentrated in areas with high human activity</strong>. However, it is important to interpret these patterns carefully. Higher density does not necessarily imply inherently “more dangerous” areas - it may also reflect increased reporting, policing presence, or simply the fact that more people are present to witness and report incidents.
+Overall, <strong>crime is highly concentrated in areas with high human activity</strong>. However, higher density does not necessarily imply more dangerous areas, as it may also reflect differences in reporting, policing, and population presence.
 </p>
 
 <p>
-Taken together, the map complements the temporal analysis by showing that crime is not only structured in time, but also strongly shaped by the physical and social geography of the city.
+Together, these spatial patterns complement the temporal analysis, showing that crime is structured not only in time but also by the city’s geography.
 </p>
 
 <h2>Patterns are stable over time</h2>
 
 <p>
-So far, we have seen that crime follows a clear daily rhythm. A natural next question is whether this pattern is stable, or if it changes significantly from year to year. To explore this, we look at how hourly crime distributions evolve over time using an interactive visualization.
+So far, we have seen that crime follows a clear daily rhythm. A natural next question is whether this pattern changes over time. To explore this, we examine how hourly crime distributions evolve using an interactive visualization.
 </p>
 
 <p>
-The figure below shows the <strong>average hourly distribution of crime types</strong>, where users can toggle individual categories to compare patterns. While the total number of incidents may vary across years, the key focus here is whether the <em>shape</em> of the daily cycle changes.
+The figure below initially shows two representative crime types (<strong>Larceny Theft</strong> and <strong>Assault</strong>), both of which exhibit a clear daily cycle. Additional categories can be toggled to compare patterns across crime types. The focus is on whether the <em>shape</em> of the daily cycle changes, rather than total volume.
 </p>
 
 <iframe src="figures/interactive_hourly_trends.html"></iframe>
 
 <div class="caption">
-Figure 3: Interactive hourly crime patterns by crime type. Users can toggle individual categories to compare how temporal patterns evolve, revealing strong consistency in daily structure despite variation in magnitude.
+Figure 3: Interactive hourly crime patterns by crime type. The figure starts with two representative categories visible, while others can be toggled to compare temporal patterns across crime types.
 </div>
 
 <p>
-When focusing on a subset of crime types, the same overall structure quickly becomes apparent. Most categories show a <strong>clear dip in the early morning hours</strong>, followed by a steady increase throughout the day and a peak in the late afternoon or evening. This mirrors the pattern observed in the static visualization, suggesting that the daily rhythm is not driven by a single category but is shared across many types of crime.
+Across categories, the same overall structure appears: a <strong>dip in the early morning</strong>, followed by a steady rise and a peak in the late afternoon or evening. This mirrors the static visualization, suggesting the daily rhythm is shared across crime types.
 </p>
 
 <p>
-Even when isolating different groups of crimes, subtle differences emerge, but they occur within a consistent framework. Some categories rise more sharply in the afternoon, while others peak slightly later in the evening. However, these variations are relatively small compared to the overall structure, which remains remarkably stable.
+Some variation exists, with certain crimes peaking slightly earlier or later. However, these differences are minor compared to the overall pattern, which remains consistent.
 </p>
 
 <p>
-When all crime types are viewed together, the consistency becomes even more striking. Despite differences in magnitude and small fluctuations, the curves align in a way that reinforces a shared temporal pattern. This indicates that <strong>the timing of crime is governed by broader, persistent factors</strong>, rather than short-term changes or isolated events.
+When multiple categories are viewed together, the consistency becomes clear. Despite differences in magnitude, the curves align, indicating that <strong>crime timing is driven by broader, persistent factors</strong>.
 </p>
 
 <p>
-Importantly, this visualization also highlights the distinction between <em>changes in volume</em> and <em>changes in structure</em>. While the number of incidents may increase or decrease over time, the underlying daily rhythm remains largely unchanged. This suggests that crime timing is closely tied to stable aspects of urban life, such as work schedules, commuting patterns, and social activity.
+This highlights the distinction between <em>changes in volume</em> and <em>changes in structure</em>. While incident counts may vary, the underlying daily rhythm remains stable, likely reflecting consistent aspects of urban life such as work schedules and mobility.
 </p>
 
 <p>
-However, as with previous analyses, caution is needed when interpreting these results. Stability in recorded patterns does not necessarily imply stability in underlying behavior. Changes in policing strategies, reporting practices, or legal definitions can all influence the data without reflecting real changes in crime itself.
+As before, caution is needed. Stability in recorded patterns does not necessarily imply stability in underlying behavior, as changes in policing or reporting can influence the data.
 </p>
 
 <p>
-Overall, the key takeaway is that <strong>crime timing in San Francisco is highly stable over time</strong>. While yearly fluctuations exist, the fundamental daily structure persists, reinforcing the idea that crime is closely linked to consistent patterns of human activity.
+Overall, <strong>crime timing in San Francisco remains highly stable over time</strong>, reinforcing the idea that it is closely linked to consistent patterns of human activity.
 </p>
 
 <h2>What does this mean?</h2>
 
 <p>
-Taken together, the analyses reveal a clear and consistent picture: crime in San Francisco is neither random in time nor space. Instead, it follows structured patterns that align closely with human activity — increasing during the day, peaking in the evening, and concentrating in dense urban areas.
+Taken together, the analyses reveal a clear picture: crime in San Francisco is not random. Instead, it follows structured patterns that align with human activity - increasing during the day, peaking in the evening, and concentrating in dense urban areas.
 </p>
 
 <p>
-At first glance, one might interpret the evening peak as evidence that these hours are inherently more “dangerous.” However, this conclusion would be overly simplistic. The data reflects <strong>recorded incidents</strong>, which are influenced not only by actual behavior, but also by policing strategies, reporting practices, and the presence of people who can witness and report events.
+At first glance, one might interpret the evening peak as evidence that these hours are more “dangerous.” However, this would be overly simplistic. The data reflects <strong>recorded incidents</strong>, which are influenced not only by behavior, but also by policing strategies and reporting practices.
 </p>
 
 <p>
-For example, areas with higher police presence or more foot traffic may naturally generate more reports, even if underlying behavior is similar elsewhere. Likewise, changes in enforcement or policy over time can create apparent trends in the data that do not directly correspond to real changes in crime.
+For example, areas with higher police presence or more foot traffic may generate more reports, even if underlying behavior is similar elsewhere. Changes in enforcement or policy can also create apparent trends without reflecting real changes in crime.
 </p>
 
 <p>
-What we can say with greater confidence is that <strong>crime is strongly shaped by routine human activity</strong>. The stability of the daily rhythm across crime types and over time suggests that these patterns are not accidental, but instead reflect consistent aspects of how the city functions — work schedules, mobility, and social behavior.
+What we can say with greater confidence is that <strong>crime is shaped by routine human activity</strong>. The stability of these patterns suggests they reflect consistent aspects of how the city functions, such as work schedules, mobility, and social behavior.
 </p>
 
 <p>
-This highlights an important takeaway for interpreting data more broadly: patterns in data are not always direct reflections of reality, but are often shaped by how that data is generated. Understanding both the strengths and limitations of the dataset is therefore essential when drawing conclusions.
+Ultimately, <strong>crime follows structured and stable daily patterns</strong>. These patterns are useful for understanding urban dynamics, but they must be interpreted carefully rather than taken as direct measures of risk.
 </p>
-
-<p>
-Ultimately, the key insight is that <strong>crime follows structured and stable daily patterns</strong>. These patterns are useful for understanding urban dynamics, but they must be interpreted carefully and in context, rather than taken as direct measures of risk or causality.
-</p>
-
 </div>
 
 </body>
