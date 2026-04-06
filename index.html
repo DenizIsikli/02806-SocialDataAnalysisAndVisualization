@@ -23,15 +23,24 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.7;
-            display: flex;
-            justify-content: center;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #a1a1aa;
+            max-width: 700px;
+            margin: 10px auto;
         }
 
         .container {
+            background: #0a0a0a;
             max-width: 900px;
-            width: 100%;
-            padding: 60px 24px;
             margin: 0 auto;
+            padding: 60px 24px;
         }
 
         h1 {
@@ -42,12 +51,11 @@
         h2 {
             color: var(--text);
             margin-top: 50px;
-            border-left: 3px solid var(--border);
+            border-left: 3px solid #ffffff;
             padding-left: 12px;
         }
 
         p {
-            color: var(--muted);
             font-size: 1.05rem;
         }
 
@@ -100,6 +108,50 @@
             margin-bottom: 30px;
         }
 
+        a {
+            color: #16c79a;        /* your accent color */
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .ref-link {
+            color: #16c79a;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .ref-link:hover {
+            text-decoration: underline;
+        }
+
+        .references {
+            margin-top: 80px;
+            padding-top: 30px;
+            border-top: 1px solid #1f1f1f;
+        }
+
+        footer {
+            margin-top: 60px;
+            border-top: 1px solid #1f1f1f;
+        }
+
+        .info-box {
+            border-left: 4px solid #2a9d8f;
+            background: #111;
+            padding: 16px 20px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box p {
+            margin: 0;
+            color: #d1d5db;
+            font-style: italic;
+        }
+
         @media (max-width: 600px) {
             .container {
                 padding: 40px 16px;
@@ -117,10 +169,17 @@
 </head>
 
 <body>
+<header style="text-align:center; padding:40px 20px 10px 20px;">
+    <h1>From Quiet Mornings to Busy Evenings: The Daily Rhythm of Crime in San Francisco</h1>
+    <p style="color:#a1a1aa; margin-top:12px; font-size:1.4rem; max-width:700px; margin-left:auto; margin-right:auto;">
+    A data-driven look at how crime activity rises and falls throughout the day - and why these patterns remain surprisingly consistent over time.
+    </p>
+    <p style="color:#a1a1aa; margin-top:10px;">
+        DTU 02806 · Social Data Analysis & Visualization
+    </p>
+</header>
 
 <div class="container">
-
-<h1>From Quiet Mornings to Busy Evenings: The Daily Rhythm of Crime in San Francisco</h1>
 
 <p>
 The San Francisco Police Department publishes detailed records of police incident reports, documenting when and where crimes occur, as well as how they are categorized. This dataset spans multiple years and includes information such as timestamps, locations, and crime types, allowing us to analyze patterns across both time and space.
@@ -134,10 +193,22 @@ In this short data story, we focus on a simple but important question: <strong><
 It is important to note that this dataset reflects <em>reported incidents</em>, not necessarily all crime that occurs. Changes in policing strategies, reporting behavior, or data collection practices can influence the patterns we observe. As a result, the findings presented here should be interpreted as patterns in recorded data rather than direct measures of underlying criminal activity.
 </p>
 
+<p>
+As with all police data, these patterns reflect reported incidents rather than all crime, meaning changes may also be influenced by reporting behavior and enforcement practices <a href="#ref3" class="ref-link">[3]</a>.
+</p>
+
+<p>
+The data used here aligns with the San Francisco Police Department’s Crime Dashboard, which presents reported incidents and allows comparison across time periods, highlighting how trends can reflect reporting practices as well as underlying behavior <a href="#ref1" class="ref-link">[1]</a>.
+</p>
+
 <h2>Crime follows a daily rhythm</h2>
 
 <p>
 Crime in San Francisco is not evenly distributed throughout the day. Instead, it follows a clear and repeatable daily cycle that reflects how people move and interact within the city. By aggregating incidents across multiple years and normalizing within each crime type, we focus on when crimes occur rather than how often they occur overall.
+</p>
+
+<p>
+At the same time, overall crime trends do not always move in one direction—recent reports show that violent crime in San Francisco has declined to some of the lowest levels in decades, even as public perception often suggests otherwise <a href="#ref5" class="ref-link">[5]</a>.
 </p>
 
 <p>
@@ -147,7 +218,18 @@ The figure below shows the <strong>average hourly distribution of different crim
 <img src="figures/hourly_distribution.png">
 
 <div class="caption">
-Figure 1: Average hourly distribution of crime types. Across categories, crime is consistently lowest in the early morning (around 4–6 AM), increases throughout the day, and peaks in the late afternoon and evening hours.
+<strong>Figure 1. A shared daily rhythm across crime types.</strong>
+Average hourly distribution of crime categories, normalized to highlight timing rather than volume. Across all categories, activity is lowest in the early morning, rises steadily throughout the day, and peaks in the evening. <strong>Why it matters:</strong> Even very different crime types follow the same temporal structure, suggesting that crime is closely tied to human activity rather than occurring randomly.
+</div>
+
+
+<div class="caption">
+<strong>Table 1. Distribution of crime types.</strong>
+</div>
+<iframe src="figures/crime_summary_table.html" style="height:500px;"></iframe>
+<div class="caption">
+Total number of recorded incidents per category, along with their relative share. 
+<strong>Why it matters:</strong> Theft dominates the dataset, so similar temporal patterns do not imply equal impact.
 </div>
 
 <p>
@@ -170,6 +252,10 @@ Importantly, this figure shows <em>relative timing</em>, not absolute risk. A hi
 Overall, <strong>crime follows a structured and predictable daily rhythm</strong>, with low activity in the early morning and peaks during the most active hours of the day.
 </p>
 
+<p>
+Crime trends do not move uniformly across categories, with some types increasing while others decline over time <a href="#ref3" class="ref-link">[3]</a>.
+</p>
+
 <h2>Where do these patterns happen?</h2>
 
 <p>
@@ -180,11 +266,23 @@ Temporal patterns only tell part of the story. While we now understand <em>when<
 The heatmap below highlights areas with higher concentrations of reported crime. Warmer colors (yellow to red) indicate higher density, while cooler colors (blue) represent lower activity. Instead of a uniform spread, we observe distinct hotspots across the city.
 </p>
 
+<p>
+Crime patterns also vary significantly at a finer geographic scale, with neighborhood-level data showing that both violent and property crimes are unevenly distributed across the city rather than concentrated uniformly <a href="#ref6" class="ref-link">[6]</a>.
+</p>
+
 <iframe src="figures/crime_map.html"></iframe>
 
 <div class="caption">
-Figure 2: Spatial distribution of crime incidents in San Francisco. High-density clusters are concentrated in central and eastern parts of the city, while residential areas tend to show lower activity levels.
+Figure 2: Spatial distribution of crime incidents in San Francisco. High-density clusters are concentrated in central and eastern parts of the city, while residential areas tend to show lower activity levels. Data source: <a href="https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783/about_data" target="_blank">San Francisco Open Data</a>. Visualization adapted from local analysis.
 </div>
+
+<p>
+Crime is not evenly distributed across districts, with certain areas consistently accounting for a larger share of incidents depending on crime type <a href="#ref4" class="ref-link">[4]</a>.
+</p>
+
+<p>
+This variation is consistent across multiple crime types, where some neighborhoods consistently show higher relative rates of assault, robbery, theft, and burglary compared to the city average, reinforcing the presence of localized crime hotspots <a href="#ref6" class="ref-link">[6]</a>.
+</p>
 
 <p>
 One key pattern to notice is the strong concentration of incidents in central areas, compared to the more dispersed patterns in residential neighborhoods.
@@ -258,11 +356,37 @@ As before, caution is needed. Stability in recorded patterns does not necessaril
 Overall, <strong>crime timing in San Francisco remains highly stable over time</strong>, reinforcing the idea that it is closely linked to consistent patterns of human activity.
 </p>
 
+<div class="info-box">
+    <p>
+        Crime in San Francisco doesn’t happen randomly throughout the day. It follows a clear daily rhythm, rising with human activity and peaking when the city is most active.
+    </p>
+</div>
+
 <h2>What does this mean?</h2>
 
 <p>
 Taken together, the analyses reveal a clear picture: crime in San Francisco is not random. Instead, it follows structured patterns that align with human activity - increasing during the day, peaking in the evening, and concentrating in dense urban areas.
 </p>
+
+<p>
+Different crime types follow distinct trajectories, suggesting that crime patterns shift rather than change uniformly <a href="#ref3" class="ref-link">[3]</a>.
+</p>
+
+<div class="info-box">
+    <h3 style="margin-top:0;">What this suggests in practice</h3>
+    <p>
+        These patterns are not random - they reflect when and where people are active.
+        This means prevention strategies should focus on opportunity, not just enforcement.
+    </p>
+    <ul>
+        <li><strong>Larceny:</strong> Concentrate efforts in high-traffic areas during peak hours, where interaction and opportunity are highest.</li>
+        <li><strong>Vehicle theft:</strong> Focus on residential neighborhoods, especially where cars remain parked for long periods.</li>
+        <li><strong>Assault:</strong> Address underlying social and environmental factors, rather than relying only on policing presence.</li>
+    </ul>
+    <p style="font-size:0.9rem; opacity:0.8;">
+        <strong>Key idea:</strong> Effective responses should align with human activity patterns, not treat crime as uniformly distributed.
+    </p>
+</div>
 
 <p>
 At first glance, one might interpret the evening peak as evidence that these hours are more “dangerous.” However, this would be overly simplistic. The data reflects <strong>recorded incidents</strong>, which are influenced not only by behavior, but also by policing strategies and reporting practices.
@@ -279,7 +403,61 @@ What we can say with greater confidence is that <strong>crime is shaped by routi
 <p>
 Ultimately, <strong>crime follows structured and stable daily patterns</strong>. These patterns are useful for understanding urban dynamics, but they must be interpreted carefully rather than taken as direct measures of risk.
 </p>
+
+<div style="margin-top:60px; font-size:0.9rem; color:#a1a1aa;">
+    <h3 style="color:#f5f5f5;">References</h3>
+    <ol>
+        <li id="ref1">
+            San Francisco Police Department (2026). <em>Crime Data Dashboard</em>. 
+            Last updated April 3, 2026.
+            <a href="https://www.sanfranciscopolice.org/stay-safe/crime-data/crime-dashboard" target="_blank">
+                Link
+            </a>
+        </li>
+
+        <li id="ref2">
+            City and County of San Francisco (2026). <em>Police Department Incident Reports: 2018 to Present</em>. 
+            DataSF Open Data Portal. Last updated April 5, 2026.
+            <a href="https://data.sfgov.org/Public-Safety/Police-Department-Incident-Reports-2018-to-Present/wg3w-h783" target="_blank">
+                Link
+            </a>
+        </li>
+        <li id="ref3">
+            Council on Criminal Justice (2025). <em>Crime in San Francisco: What You Need to Know</em>. 
+            Published October 21, 2025.
+            <a href="https://counciloncj.org/crime-in-san-francisco-what-you-need-to-know/" target="_blank">
+                Link
+            </a>
+        </li>
+        <li id="ref4">
+            The San Francisco Standard (2026). <em>San Francisco 2025 Crime Stats</em>. 
+            Published January 2, 2026.
+            <a href="https://sfstandard.com/2026/01/02/san-francisco-2025-crime-stats/" target="_blank">Link</a>
+        </li>
+        <li id="ref5">
+            Newsweek (2025). <em>How Bad is San Francisco’s Crime Problem? Examining the Numbers</em>. 
+            Published October 21, 2025.
+            <a href="https://www.newsweek.com/how-bad-is-san-franciscos-crime-problem-examining-the-numbers-10910934" target="_blank">Link</a>
+        </li>
+        <li id="ref6">
+            San Francisco Chronicle (2026). <em>San Francisco Crime by Neighborhood</em>. 
+            Published February 6, 2026.
+            <a href="https://www.sfchronicle.com/projects/2026/san-francisco-crime-neighborhood/" target="_blank">Link</a>
+        </li>
+    </ol>
 </div>
 
+<footer style="
+    margin-top: 60px;
+    padding: 20px;
+    border-top: 1px solid #333;
+    color: #a1a1aa;
+    font-size: 0.85rem;
+    text-align: center;
+">
+    Data: San Francisco Police Department · 
+    Built for DTU 02806 Social Data Analysis & Visualization
+</footer>
+</div>
 </body>
 </html>
