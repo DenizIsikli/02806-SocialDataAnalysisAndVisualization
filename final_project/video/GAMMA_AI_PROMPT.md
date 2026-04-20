@@ -1,129 +1,135 @@
-# Gamma.app Slide Generation Prompt
+# Gamma.app Slide Generation Prompt (Intro-First)
 
-You are creating a 7-slide academic presentation for a university final project. This is a 1-minute concept video introducing a data analysis project on NYC's 311 service request system. Generate slides that are academic, data-focused, and visually clear. Each slide should support the narration and include the specified data visualizations.
+You are creating a 7-slide academic presentation for a university final project. This is a 1-minute concept video that should be INTRODUCTORY, not heavily analytical. Prioritize: central idea, dataset context, why it is interesting, visualization mockup, and only light preliminary data previews.
 
----
-
-## Slide 1: Central Idea - "What Bothers New Yorkers?"
-
-**Content:**
-- Title: "What Bothers New Yorkers?"
-- Subtitle: NYC 311 Service Requests Analysis
-- Brief context: A data-driven exploration of urban complaint patterns
-- Show an iconic NYC skyline or silhouette in the background (subtle)
-
-**Visual:** Professional title slide with clean typography and NYC-themed color palette.
+Use clear, high-contrast slides with minimal text. Every chart should be framed as an early preview, not a final conclusion.
 
 ---
 
-## Slide 2: Dataset Overview - Size and Properties
+## Slide 1: Central Idea
+
+**Title:** What Is Everyday Urban Friction?
 
 **Content:**
-- Title: "Dataset Overview - Size and Properties"
-- 50,000 NYC 311 service requests (2020-2025)
-- 5 years of data, January 2020 - March 2025
+- NYC 311 requests as a lens on daily city problems
+- Core project question: Which issues appear most often, where, and when?
+- Subtitle: NYC 311 Service Requests (Concept Video)
+
+**Visual direction:**
+- Clean title slide with subtle NYC skyline silhouette
+- One strong headline + one short guiding question
+
+---
+
+## Slide 2: Why This Is Interesting
+
+**Title:** Why Study 311 Data?
+
+**Content:**
+- Captures resident-reported city issues at scale
+- Connects lived experience to infrastructure and service delivery
+- Useful for public communication and policy discussion
+
+**Visual direction:**
+- 3-card layout with icons: Residents, Infrastructure, City Services
+- Keep this conceptual and accessible
+
+---
+
+## Slide 3: Dataset Snapshot (Size + Properties)
+
+**Title:** Dataset Snapshot
+
+**Content:**
+- 50,000 requests (2020-2025)
 - 5 boroughs, 514 community boards
-- 10 variables, zero missing values
-- 16 complaint categories
-- Emphasis: High-quality, complete dataset
+- 10 core variables, 0 missing values in this sample
+- Includes date, category, borough, and geo-coordinates
 
-**Visual:** Create an infographic layout with icons for:
-- A map icon showing "5 Boroughs"
-- A calendar showing "5 Years (2020-2025)"
-- A database/table icon showing "50,000 Records"
-- A checkbox showing "Zero Missing Values"
+**Visual direction:**
+- Infographic style with 4-5 stat blocks
+- Include tiny map glyph + calendar + table icon
 
 ---
 
-## Slide 3: Fundamental Distribution - Complaint Types
+## Slide 4: Visualization Mockup (What We Plan to Build)
+
+**Title:** Planned Visual Story
 
 **Content:**
-- Title: "Top Complaint Types Distribution"
-- Create a horizontal bar chart or pie chart showing:
-  - Heat: 13.5%
-  - Water: 11.0%
-  - Rodent: 10.3%
-  - Others: 65.2%
-- Call-out box: "Top 3 = 34.8% of ALL complaints"
-- Insight: Infrastructure and housing maintenance dominate
+- Mockup panel 1: Map of complaint locations
+- Mockup panel 2: Top complaint categories bar chart
+- Mockup panel 3: Monthly/seasonal trend timeline
+- Caption: Draft concept for final interactive narrative
 
-**Visual:** A clear bar chart or pie chart with Heat, Water, and Rodent highlighted in distinct colors. Use a dark background to make percentages pop. Add a highlight box showing "34.8%".
+**Visual direction:**
+- Wireframe-style dashboard mockup
+- Label each panel clearly: Where, What, When
 
 ---
 
-## Slide 4: Geographic Properties - Borough-Level Patterns
+## Slide 5: Preliminary Data Preview
+
+**Title:** Early Pattern Preview (Not Final Conclusions)
 
 **Content:**
-- Title: "Geographic Distribution: Complaints by Borough"
-- Create a pie chart or horizontal bar chart:
-  - Manhattan: 25%
-  - Brooklyn: 22%
-  - Queens: 20%
-  - Bronx: 20%
-  - Staten Island: 13%
-- Key insight: Distribution reflects population density differences
-- Equity question: Does more complaints = fewer resources?
+- Top categories preview:
+  - HEAT 13.5%
+  - WATER 11.0%
+  - RODENT 10.3%
+  - Others 65.2%
+- Intro takeaway: a few issue types make up a large share of requests
 
-**Visual:** A geographic visualization (pie chart with borough labels, or a stylized NYC map showing each borough with complaint percentages). Use 5 distinct colors for each borough. Consider subtle Manhattan prominence.
+**Visual direction:**
+- Simple horizontal bar chart
+- Add label: Preliminary snapshot
 
 ---
 
-## Slide 5: Key Finding - Resolution Time Analysis
+## Slide 6: Preliminary Geo + Time Preview
+
+**Title:** Early Geographic and Seasonal Structure
 
 **Content:**
-- Title: "Resolution Time: Fair Resource Allocation"
-- Main finding: All 5 boroughs average ~30 days response time
-- Negligible differences: Less than 1 day between fastest and slowest
-- Create a line chart or bar chart showing flat/near-flat response times across boroughs
-- Call-out: "Equitable service regardless of neighborhood wealth"
+- Borough share preview:
+  - Manhattan 25%, Brooklyn 22%, Queens 20%, Bronx 20%, Staten Island 13%
+- Seasonal preview:
+  - Winter 27.4%, Spring 23.2%, Summer 23.3%, Fall 26.0%
+- Frame as orientation to data structure, not a final interpretation
 
-**Visual:** A line graph or bar chart with all 5 boroughs on the x-axis and resolution time (~30 days) on the y-axis. Show the line as nearly flat to emphasize uniformity. Use green or a positive color to suggest equity/fairness.
+**Visual direction:**
+- Split slide: borough bar chart on left, seasonal bars on right
+- Keep annotations short and neutral
 
 ---
 
-## Slide 6: Temporal Distribution - Seasonality in Complaints
+## Slide 7: Genre + Why It Fits
+
+**Title:** Genre Choice: Data-Driven Exploratory Narrative
 
 **Content:**
-- Title: "Seasonal Patterns: 2020-2025"
-- Show a line chart or bar chart with seasonal breakdown:
-  - Winter (Dec-Feb): 27.4%
-  - Spring (Mar-May): 23.2%
-  - Summer (Jun-Aug): 23.3%
-  - Fall (Sep-Nov): 26.0%
-- Key insight: Overall trend is STABLE—predictable, not deteriorating
-- Winter peaks driven by heating-related complaints
+- Genre: Data-driven exploratory narrative (Segel & Heer)
+- Why this genre fits:
+  1. Start with context and motivation
+  2. Introduce the data and visual frame
+  3. Reveal patterns progressively
+  4. End with open questions for full analysis
+- Closing line: From complaints to clearer public insight
 
-**Visual:** A line graph or stacked bar chart showing complaint volume by season. Use seasonal colors (blue for winter, green for spring/summer, orange/brown for fall). Include a notation showing "Overall Trend: STABLE" to emphasize the key finding.
-
----
-
-## Slide 7: Genre - Data-Driven Exploratory Narrative
-
-**Content:**
-- Title: "Genre: Data-Driven Exploratory Narrative"
-- Three pillars (use boxes or visual sections):
-  1. **Story Emerges from Data** - Actual patterns, not assumptions
-  2. **Progressive Insight** - Move from distributions to equity questions
-  3. **Why This Works** - Genuinely exploring urban resource allocation, not illustrating predetermined conclusions
-- Bottom call-out: "This genre lets the data tell the story"
-
-**Visual:** Create 3 distinct visual boxes or sections (e.g., left-to-right flow) representing the three pillars. Use icons or imagery:
-- Data/graphs for "Story Emerges from Data"
-- Stacked insights/layers for "Progressive Insight"
-- Question mark or thought bubble for "Why This Works"
-Use a clean, minimalist design with high contrast text.
+**Visual direction:**
+- 4-step horizontal flow diagram
+- Final step visually points to “Next: full project analysis”
 
 ---
 
-## General Design Notes:
-- Color scheme: Professional academic palette (navy, white, accent colors like teal or orange)
-- Font: Clean, modern sans-serif (e.g., Arial, Helvetica, or similar)
-- Use data visualization best practices: clear labels, appropriate chart types, high contrast
-- Each slide should be readable on screen during a 1-minute video
-- Avoid cluttered layouts; prioritize clarity and data focus
-- All text should be large enough to read easily in a video presentation
+## General Design Notes
+- Tone: introductory, curious, and academically clear
+- Do not over-claim findings or causal conclusions
+- Prefer short labels and large readable text for 1-minute pacing
+- Keep chart styling consistent across slides
+- Use a professional palette (e.g., deep blue, slate, warm orange accent)
 
 ---
 
-## Timing Note:
-These 7 slides will support a ~1-minute narrated video. Plan for smooth transitions between slides at natural narration breaks.
+## Timing Note
+Design for ~1 minute total across 7 slides, with smooth transitions and one core message per slide.
