@@ -2,3 +2,4 @@
 *.venv
 dataset/**
 !dataset/
+final_project/data/
