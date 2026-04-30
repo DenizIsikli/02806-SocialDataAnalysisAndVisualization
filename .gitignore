@@ -5,7 +5,6 @@ dataset/**
 final_project/data/
 final_project_video/
 src/dataset/
-# Ignore common large data files and folders
 *.csv
 *.geojson
 *.zip
