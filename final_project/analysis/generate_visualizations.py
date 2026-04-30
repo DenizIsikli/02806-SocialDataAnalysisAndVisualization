@@ -187,7 +187,58 @@ else:
     with open(OUTPUT_DIR / 'complaint_trends.json', 'w') as f:
         json.dump(trends_json, f, indent=2)
 
-# ==================== SUMMARY STATISTICS ====================
+# ==================== 8. BOROUGH COMPLAINTS - Top complaints per borough ====================
+print("\n[8/8] Generating borough complaints breakdown...")
+
+borough_complaints_json = []
+for borough in sorted(df['Borough'].unique()):
+    borough_df = df[df['Borough'] == borough]
+    top_5_complaints = borough_df['Complaint Type'].value_counts().head(5)
+    borough_total = len(borough_df)
+    
+    for complaint_type, count in top_5_complaints.items():
+        pct = (count / borough_total * 100)
+        borough_complaints_json.append({
+            'borough': borough,
+            'complaint': complaint_type,
+            'count': int(count),
+            'pct': round(pct, 1)
+        })
+
+with open(OUTPUT_DIR / 'borough_complaints.json', 'w') as f:
+    json.dump(borough_complaints_json, f, indent=2)
+print(f"✓ Generated borough complaints data: {len(borough_complaints_json)} complaint-borough pairs")
+
+# ==================== 9. TEMPORAL HEATMAP - Complaint types by month ====================
+print("\n[9/9] Generating temporal heatmap data...")
+
+# Create month-complaint heatmap
+df['Created Date'] = pd.to_datetime(df['Created Date'], errors='coerce')
+df['YearMonth'] = df['Created Date'].dt.to_period('M')
+df['Month'] = df['Created Date'].dt.month
+df['Month_Name'] = df['Created Date'].dt.strftime('%b')
+
+# Get top complaint types
+top_complaint_types = df['Complaint Type'].value_counts().head(8).index.tolist()
+
+heatmap_data = []
+for complaint_type in top_complaint_types:
+    complaint_df = df[df['Complaint Type'] == complaint_type]
+    monthly_counts = []
+    
+    for month in range(1, 13):
+        month_count = len(complaint_df[complaint_df['Month'] == month])
+        monthly_counts.append(month_count)
+    
+    heatmap_data.append({
+        'complaint_type': complaint_type,
+        'monthly_values': monthly_counts
+    })
+
+with open(OUTPUT_DIR / 'complaint_types_by_month.json', 'w') as f:
+    json.dump(heatmap_data, f, indent=2)
+print(f"✓ Generated temporal heatmap data: {len(heatmap_data)} complaint types × 12 months")
+
 print("\n" + "=" * 60)
 print("SUMMARY STATISTICS")
 print("=" * 60)

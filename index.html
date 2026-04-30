@@ -1222,89 +1222,58 @@
                 }, { responsive: true });
             }
             
-            // 6. BOROUGH COMPLAINTS - Top 5 complaints per borough
-            const boroughComplaintsData = [
-                { borough: 'Manhattan', complaint: 'Heat', count: 1900, pct: 15.2 },
-                { borough: 'Manhattan', complaint: 'Water', count: 1513, pct: 12.1 },
-                { borough: 'Manhattan', complaint: 'Plumbing', count: 980, pct: 7.8 },
-                { borough: 'Manhattan', complaint: 'Paint/Wall', count: 756, pct: 6.1 },
-                { borough: 'Manhattan', complaint: 'Rodent', count: 1113, pct: 8.9 },
-                { borough: 'Brooklyn', complaint: 'Heat', count: 1579, pct: 14.1 },
-                { borough: 'Brooklyn', complaint: 'Rodent', count: 1311, pct: 11.7 },
-                { borough: 'Brooklyn', complaint: 'Water', count: 1210, pct: 10.8 },
-                { borough: 'Brooklyn', complaint: 'Paint/Wall', count: 765, pct: 6.8 },
-                { borough: 'Brooklyn', complaint: 'Electric', count: 743, pct: 6.6 },
-                { borough: 'Queens', complaint: 'Heat', count: 1518, pct: 13.8 },
-                { borough: 'Queens', complaint: 'Street', count: 1034, pct: 9.4 },
-                { borough: 'Queens', complaint: 'Water', count: 1034, pct: 9.4 },
-                { borough: 'Queens', complaint: 'Rodent', count: 1001, pct: 9.1 },
-                { borough: 'Queens', complaint: 'Paint/Wall', count: 802, pct: 7.3 },
-                { borough: 'Bronx', complaint: 'Heat', count: 1359, pct: 14.3 },
-                { borough: 'Bronx', complaint: 'Water', count: 969, pct: 10.2 },
-                { borough: 'Bronx', complaint: 'Rodent', count: 1026, pct: 10.8 },
-                { borough: 'Bronx', complaint: 'Paint/Wall', count: 912, pct: 9.6 },
-                { borough: 'Bronx', complaint: 'Street', count: 845, pct: 8.9 },
-                { borough: 'Staten Island', complaint: 'Heat', count: 748, pct: 12.9 },
-                { borough: 'Staten Island', complaint: 'Water', count: 470, pct: 8.1 },
-                { borough: 'Staten Island', complaint: 'Rodent', count: 423, pct: 7.3 },
-                { borough: 'Staten Island', complaint: 'Street', count: 598, pct: 10.3 },
-                { borough: 'Staten Island', complaint: 'Paint/Wall', count: 434, pct: 7.5 }
-            ];
-            
-            const boroughs = [...new Set(boroughComplaintsData.map(d => d.borough))];
-            const complaints = [...new Set(boroughComplaintsData.map(d => d.complaint))];
-            
-            const traces = complaints.map(complaint => ({
-                x: boroughs,
-                y: boroughs.map(borough => {
-                    const data = boroughComplaintsData.find(d => d.borough === borough && d.complaint === complaint);
-                    return data ? data.pct : 0;
-                }),
-                name: complaint,
-                type: 'bar'
-            }));
-            
-            Plotly.newPlot('borough-complaints', traces, {
-                title: '',
-                xaxis: { title: 'Borough' },
-                yaxis: { title: 'Complaint Percentage (%)' },
-                barmode: 'stack',
-                showlegend: true,
-                height: 450,
-                plot_bgcolor: 'rgba(0,0,0,0)',
-                paper_bgcolor: 'rgba(0,0,0,0)'
-            }, { responsive: true });
+            // 6. BOROUGH COMPLAINTS - Top complaints per borough
+            const boroughComplaintsRaw = await loadData('borough_complaints.json');
+            if (boroughComplaintsRaw && boroughComplaintsRaw.length > 0) {
+                // Group by borough and complaint
+                const boroughs = [...new Set(boroughComplaintsRaw.map(d => d.borough))];
+                const complaints = [...new Set(boroughComplaintsRaw.map(d => d.complaint))];
+                
+                const traces = complaints.map(complaint => ({
+                    x: boroughs,
+                    y: boroughs.map(borough => {
+                        const data = boroughComplaintsRaw.find(d => d.borough === borough && d.complaint === complaint);
+                        return data ? data.pct : 0;
+                    }),
+                    name: complaint,
+                    type: 'bar'
+                }));
+                
+                Plotly.newPlot('borough-complaints', traces, {
+                    title: '',
+                    xaxis: { title: 'Borough' },
+                    yaxis: { title: 'Complaint Percentage (%)' },
+                    barmode: 'stack',
+                    showlegend: true,
+                    height: 450,
+                    plot_bgcolor: 'rgba(0,0,0,0)',
+                    paper_bgcolor: 'rgba(0,0,0,0)'
+                }, { responsive: true });
+            }
             
             // 7. TEMPORAL HEATMAP - Complaint types by month
-            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-            const complaintTypes = ['Heat', 'Water', 'Rodent', 'Plumbing', 'Paint/Wall', 'Electric', 'Street', 'Heating'];
-            
-            const heatmapZ = [
-                [850, 920, 640, 480, 420, 380, 350, 360, 420, 550, 780, 920],
-                [420, 480, 510, 520, 580, 610, 680, 750, 620, 540, 480, 450],
-                [380, 350, 390, 410, 450, 520, 620, 680, 590, 480, 420, 390],
-                [320, 380, 420, 450, 480, 510, 580, 640, 550, 450, 380, 350],
-                [280, 320, 350, 380, 420, 450, 520, 580, 500, 420, 350, 300],
-                [250, 290, 320, 350, 380, 410, 480, 540, 460, 380, 320, 280],
-                [290, 310, 340, 360, 390, 410, 460, 520, 480, 400, 340, 310],
-                [820, 890, 630, 470, 410, 370, 340, 350, 410, 540, 760, 900]
-            ];
-            
-            Plotly.newPlot('temporal-heatmap', [{
-                z: heatmapZ,
-                x: months,
-                y: complaintTypes,
-                type: 'heatmap',
-                colorscale: 'YlOrRd',
-                colorbar: { title: 'Complaints' }
-            }], {
-                title: '',
-                xaxis: { title: 'Month' },
-                yaxis: { title: 'Complaint Type' },
-                height: 450,
-                plot_bgcolor: 'rgba(0,0,0,0)',
-                paper_bgcolor: 'rgba(0,0,0,0)'
-            }, { responsive: true });
+            const temporalHeatmapRaw = await loadData('complaint_types_by_month.json');
+            if (temporalHeatmapRaw && temporalHeatmapRaw.length > 0) {
+                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                const complaintTypes = temporalHeatmapRaw.map(d => d.complaint_type);
+                const heatmapZ = temporalHeatmapRaw.map(d => d.monthly_values);
+                
+                Plotly.newPlot('temporal-heatmap', [{
+                    z: heatmapZ,
+                    x: months,
+                    y: complaintTypes,
+                    type: 'heatmap',
+                    colorscale: 'YlOrRd',
+                    colorbar: { title: 'Complaints' }
+                }], {
+                    title: '',
+                    xaxis: { title: 'Month' },
+                    yaxis: { title: 'Complaint Type' },
+                    height: 450,
+                    plot_bgcolor: 'rgba(0,0,0,0)',
+                    paper_bgcolor: 'rgba(0,0,0,0)'
+                }, { responsive: true });
+            }
         }
         
         // Start chart initialization when DOM is ready
