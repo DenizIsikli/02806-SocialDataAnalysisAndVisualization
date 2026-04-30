@@ -3,3 +3,5 @@
 dataset/**
 !dataset/
 final_project/data/
+final_project_video/
+src/dataset/
