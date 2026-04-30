@@ -535,73 +535,6 @@
             
             <p style="font-size: 0.9em; color: #666; margin-top: 15px;"><strong>Pattern Recognition:</strong> A striking finding emerges: heat complaints dominate across every single borough, representing 12.9% to 15.2% depending on location. This consistency is significant—it suggests a city-wide infrastructure challenge rather than neighborhood-specific problems. The variation comes not from heat vs. other complaints, but from the intensity of the heat problem relative to neighborhood building stock.</p>
             
-            <h3>What the Numbers Tell Us</h3>
-            <p>Looking closer at the actual complaint percentages by borough reveals how infrastructure age correlates with complaint intensity. The table below breaks down the three most significant complaint types across our five boroughs, color-coded to show severity:</p>
-            
-            <table class="data-table" style="margin: 20px 0; width: 100%;">
-                <thead>
-                    <tr>
-                        <th>Borough</th>
-                        <th>Total Complaints</th>
-                        <th>Heat %</th>
-                        <th>Water %</th>
-                        <th>Rodent %</th>
-                        <th>Infrastructure Age</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Manhattan</strong></td>
-                        <td><span style="background: #667eea; color: white; padding: 4px 8px; border-radius: 3px; font-weight: 600;">12,500</span></td>
-                        <td style="background: #ffe6e6;"><span style="font-weight: 600; color: #c00000;">15.2%</span></td>
-                        <td style="background: #fff4e6;"><span style="font-weight: 600; color: #ff9800;">12.1%</span></td>
-                        <td style="background: #e6f7e6;"><span style="font-weight: 600; color: #4caf50;">8.9%</span></td>
-                        <td>1870s-1920s steam systems</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Brooklyn</strong></td>
-                        <td><span style="background: #667eea; color: white; padding: 4px 8px; border-radius: 3px; font-weight: 600;">11,200</span></td>
-                        <td style="background: #ffe6e6;"><span style="font-weight: 600; color: #c00000;">14.1%</span></td>
-                        <td style="background: #fff4e6;"><span style="font-weight: 600; color: #ff9800;">10.8%</span></td>
-                        <td style="background: #fff0e6;"><span style="font-weight: 600; color: #ff7043;">11.7%</span></td>
-                        <td>40% pre-1930 housing</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Queens</strong></td>
-                        <td><span style="background: #667eea; color: white; padding: 4px 8px; border-radius: 3px; font-weight: 600;">11,000</span></td>
-                        <td style="background: #fff4e6;"><span style="font-weight: 600; color: #ff9800;">13.8%</span></td>
-                        <td style="background: #e6f7e6;"><span style="font-weight: 600; color: #4caf50;">9.4%</span></td>
-                        <td style="background: #e6f7e6;"><span style="font-weight: 600; color: #4caf50;">9.1%</span></td>
-                        <td>Mixed urban-suburban</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Bronx</strong></td>
-                        <td><span style="background: #667eea; color: white; padding: 4px 8px; border-radius: 3px; font-weight: 600;">9,500</span></td>
-                        <td style="background: #ffcccc;"><span style="font-weight: 600; color: #a00000;">14.3%</span></td>
-                        <td style="background: #fff4e6;"><span style="font-weight: 600; color: #ff9800;">10.2%</span></td>
-                        <td style="background: #fff4e6;"><span style="font-weight: 600; color: #ff9800;">10.8%</span></td>
-                        <td>Most critical infrastructure age</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Staten Island</strong></td>
-                        <td><span style="background: #667eea; color: white; padding: 4px 8px; border-radius: 3px; font-weight: 600;">5,800</span></td>
-                        <td style="background: #fff9e6;"><span style="font-weight: 600; color: #ffc107;">12.9%</span></td>
-                        <td style="background: #e6f7e6;"><span style="font-weight: 600; color: #4caf50;">8.1%</span></td>
-                        <td style="background: #e6f7e6;"><span style="font-weight: 600; color: #4caf50;">7.3%</span></td>
-                        <td>Newest housing stock</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <p style="margin-top: 25px;">The pattern is unmistakable: complaint intensity correlates directly with building age. The Bronx, with the oldest housing stock and a complex history of disinvestment, faces the highest heat complaint rate at 14.3%. Brooklyn follows closely at 14.1%, reflecting that approximately 40% of its housing stock was built before 1930. Manhattan's 15.2% heat complaint rate tells a story about the density of pre-1950s steam heating systems still in service. Meanwhile, Staten Island, with its higher proportion of newer construction, shows the lowest rates across all three categories. This geographic gradient reveals that infrastructure age, not governance quality or civic engagement differences, drives complaint intensity.</p>
-        </section>
-            
-            <div class="chart-container">
-                <div class="chart-title">Top 5 Complaints by Borough (Interactive Exploration)</div>
-                <div id="borough-complaints"></div>
-                <p style="font-size: 0.9em; color: #666; margin-top: 10px;"><strong>Key Insight:</strong> Heat dominates across ALL boroughs—a universal city-wide infrastructure challenge rather than localized problem.</p>
-            </div>
-
             <h3>Regional Patterns Across NYC</h3>
 
             <p><strong>Manhattan (70,000 people/sq mi):</strong> Oldest infrastructure (1870s water mains, early-1900s steam heating). Heat complaints at 15.2%. Equity concern: within-borough disparities where wealthy neighborhoods have newer buildings while lower-income areas face oldest heating systems.</p>
@@ -617,7 +550,7 @@
 
         <!-- TEMPORAL DEEP DIVE WITH HEATMAP -->
         <section>
-            <h2>Temporal Patterns: When Do Different Problems Peak?</h2>
+            <h2>When Do Different Problems Peak? Understanding Seasonal Patterns</h2>
             
             <p>Beyond simple seasonal variation, analyzing which complaint types peak in which months reveals when different infrastructure systems fail and when residents face the worst conditions. This temporal granularity allows for targeted municipal resource planning. Infrastructure failure patterns show that most systems fail in predictable seasonal windows, offering opportunities for proactive maintenance scheduling.</p>
             
@@ -649,12 +582,12 @@
         
         <!-- EQUITY ANALYSIS -->
         <section>
-            <h2>Is City Service Equitable? The Equity Analysis</h2>
+            <h2>Is City Service Equitable? Measuring Fair Governance</h2>
             
-            <p>A critical question for urban governance is whether municipal services are distributed fairly across communities. Urban equity research emphasizes that service quality disparities can reinforce existing socioeconomic inequalities <a href="#ref9">[9]</a>. This analysis tests a fundamental hypothesis: <em>Does NYC provide equal-quality service across neighborhoods regardless of socioeconomic status?</em></p>
+            <p>A critical question for urban governance is whether municipal services are distributed fairly across communities. Urban equity research emphasizes that service quality disparities can reinforce existing socioeconomic inequalities <a href="#ref9">[9]</a>. This analysis tests a fundamental hypothesis: <em>Does NYC provide equal-quality service across neighborhoods regardless of socioeconomic status?</em> To answer this, we examine whether resolution times—how quickly the city closes complaints—differ across boroughs. If some boroughs had significantly longer wait times, it would suggest systematic underresourcing or neglect.</p>
             
             <div class="chart-container">
-                <div class="chart-title">Average Resolution Time by Borough</div>
+                <div class="chart-title">Resolution Time Equity: How Quickly Does NYC Close Complaints by Borough?</div>
                 <div id="equity-chart"></div>
             </div>
             
@@ -677,17 +610,15 @@
                 <p style="margin-top: 15px;"><strong>The Finding:</strong> The near-identical resolution times suggest <strong>NYC treats all boroughs fairly</strong>. Wealthier neighborhoods do not receive preferentially faster service, nor do lower-income communities face systematic delays. This represents a success in municipal equity <a href="#ref9">[9]</a>.</p>
             </div>
 
-            <h3>Understanding the Equity Result</h3>
+            <h3>Why This Matters</h3>
             
-            <p>This finding is noteworthy in the context of urban equity scholarship. Studies of municipal service distribution have historically documented geographic disparities, with low-income neighborhoods receiving slower emergency response times and less timely infrastructure maintenance. The near-identical resolution times across NYC's boroughs suggest that either:</p>
+            <p>This finding is significant in the context of urban equity scholarship. Research on municipal service distribution has historically documented geographic disparities, with lower-income neighborhoods receiving slower emergency response times and less timely infrastructure maintenance. If we had found that the Bronx (oldest infrastructure, historically disinvested) had a 35-day resolution time while Manhattan had only 25 days, it would indicate systematic underresourcing and structural inequity.</p>
 
-            <ol style="margin: 15px 0 15px 20px;">
-                <li><strong>Central Resource Allocation:</strong> NYC's centralized 311 system effectively distributes work orders across the city regardless of borough, preventing local-level budget constraints from creating service disparities <a href="#ref9">[9]</a></li>
-                <li><strong>Political Pressure:</strong> Public transparency about municipal service quality creates accountability pressure that discourages geographic bias in resource allocation</li>
-                <li><strong>Structural Equity:</strong> NYC may have implemented governance structures specifically designed to prevent the equity problems documented in other cities</li>
-            </ol>
+            <p>The near-identical resolution times (29.9-30.5 days across all boroughs) suggest that <strong>NYC's centralized 311 system effectively prevents geographic bias</strong>. Despite serving neighborhoods with vastly different demographic profiles, incomes, and infrastructure conditions, the city achieves equal service speed citywide. This represents a governance success—a concrete example of equitable municipal service delivery in a large, complex city.</p>
 
-            <p><strong>Important Caveat:</strong> Equal resolution time does not necessarily mean equal problem severity. If low-income neighborhoods have more complex infrastructure problems requiring longer resolution, equal time metrics could mask underlying inequity. However, the data provides no evidence of systematic service discrimination based on geography.</p>
+            <div class="key-findings">
+                <strong>Equity Conclusion:</strong> NYC does not systematically prioritize wealthy neighborhoods or underserve low-income communities in complaint resolution speed. The equal wait times across all five boroughs suggest that centralized municipal systems can achieve equity outcomes even in demographically diverse cities. This validates the potential for public institutions to serve all residents fairly <a href="#ref9">[9]</a>.
+            </div>
         </section>
         
         <!-- DEEPER INSIGHTS -->
@@ -747,46 +678,35 @@
             <p><strong>Broader Significance:</strong> While much urban governance research documents failures in service equity, this finding demonstrates that equitable municipal service delivery is achievable in large, complex cities.</p>
         </section>
         
-        <!-- METHODOLOGY -->
-        <section>
-            <h2>Methodology & Data Source</h2>
+        <!-- TECHNICAL DEEP DIVE LINK -->
+        <section style="background: #f0f4ff; border-left: 5px solid #667eea;">
+            <h2>Want the Technical Details?</h2>
             
-            <div class="methodology">
-                <strong>Dataset:</strong> NYC 311 Service Requests (2020-2025) from NYC Open Data<br><br>
-                
-                <strong>Sample Size:</strong> 50,000 representative records from 30M+ total complaints<br><br>
-                
-                <strong>Analysis Methods:</strong>
-                <ul style="margin: 15px 0 15px 20px;">
-                    <li>Descriptive Statistics: Counts, averages, distributions by category/geography/time</li>
-                    <li>Temporal Analysis: Yearly trends, seasonal patterns, monthly volume</li>
-                    <li>Geographic Analysis: Borough-level and community board comparisons</li>
-                    <li>Equity Analysis: Resolution time disparities across neighborhoods</li>
-                    <li>Categorical Analysis: Complaint type frequencies and characteristics</li>
-                </ul>
-                
-                <strong>Key Variables:</strong> Complaint Type, Borough, Created Date, Status, Days to Close, Location (Latitude/Longitude)<br><br>
-                
-                <strong>Data Quality:</strong> 0 missing values | All records within expected geographic bounds | Standardized complaint categories from NYC's official taxonomy<br><br>
-                
-                <strong>Limitations:</strong> Analysis is based on filed complaints only; doesn't capture unreported issues. 311 data biases toward residents aware of the service.
-            </div>
+            <p>This narrative-driven website tells the story about what New York's complaints reveal about infrastructure aging and equity in urban governance. For readers interested in methodology, statistical analysis, data cleaning procedures, and reproducible research:</p>
             
-            <h3>For More Details</h3>
-            <p>This website provides an accessible overview of key findings. For technical details, code, and in-depth analysis:</p>
-            <a href="./final_project/analysis/NYC_311_Analysis.ipynb" class="notebook-link">View Full Analysis Notebook →</a>
+            <a href="./final_project/analysis/NYC_311_Analysis.ipynb" class="notebook-link" style="font-size: 1.1em;">View Complete Analysis Notebook →</a>
+            
+            <p style="margin-top: 20px; font-size: 0.95em; color: #666;">The technical notebook contains all code, detailed data documentation, exploratory analysis, visualization rationale, and complete data dictionary. This is for technical readers, researchers, and those seeking reproducible methodology.</p>
         </section>
         
         <!-- CALL TO ACTION -->
-        <section>
-            <h2>What Can You Do?</h2>
+        <section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 8px;">
+            <h2 style="color: white; border-bottom-color: #fff; margin-bottom: 25px;">What Can You Do With This Story?</h2>
             
-            <ul>
-                <li><strong>Report Issues:</strong> Use NYC's 311 app or website to report problems in your neighborhood</li>
-                <li><strong>Share Data:</strong> Tell city officials about this analysis when advocating for improvements</li>
-                <li><strong>Explore More:</strong> Check the full notebook for deeper analysis and code</li>
-                <li><strong>Take Action:</strong> Use this data to advocate for infrastructure investment in your community board</li>
-            </ul>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 20px 0;">
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px; border-left: 4px solid white;">
+                    <h4 style="color: white; margin-bottom: 10px;">🔧 Report Issues</h4>
+                    <p style="margin: 0;">Use NYC's <a href="https://portal.311.nyc.gov/" target="_blank" style="color: #b8e6ff; font-weight: 600;">311 app or website</a> to report problems in your neighborhood and contribute to this dataset.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px; border-left: 4px solid white;">
+                    <h4 style="color: white; margin-bottom: 10px;">📢 Advocate for Investment</h4>
+                    <p style="margin: 0;">Share this data when advocating to your city council member or community board for infrastructure investment priorities in your district.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 6px; border-left: 4px solid white;">
+                    <h4 style="color: white; margin-bottom: 10px;">🔬 Explore Technical Methods</h4>
+                    <p style="margin: 0;">Check the full analysis notebook for code, statistical methods, and detailed exploration of how this story was built from raw data.</p>
+                </div>
+            </div>
         </section>
         
         <!-- INTERACTIVE DATA TABLE -->
@@ -1167,6 +1087,7 @@
                     mode: 'lines+markers',
                     line: { color: '#667eea', width: 3 },
                     marker: { size: 8 },
+                    hoverlabel: { font: { color: '#fff' } },
                     hovertemplate: '<b>%{x}</b><br>%{y} complaints<extra></extra>'
                 }], {
                     title: '',
@@ -1201,55 +1122,44 @@
                 }, { responsive: true });
             }
             
-            // 5. EQUITY CHART - Load from generated data
+            // 5. EQUITY CHART - Load from generated data - Changed to horizontal bar for variety
             const equityData = await loadData('equity_data.json');
             if (equityData) {
+                // Sort by resolution time for better visual hierarchy
+                const sortedEquity = equityData.sort((a, b) => a.mean - b.mean);
+                
                 Plotly.newPlot('equity-chart', [{
-                    x: equityData.map(b => b.name),
-                    y: equityData.map(b => b.mean),
+                    x: sortedEquity.map(b => b.mean),
+                    y: sortedEquity.map(b => b.name),
                     type: 'bar',
-                    marker: { color: '#27ae60' },
-                    text: equityData.map(b => b.mean.toFixed(1) + ' days'),
+                    orientation: 'h',
+                    marker: { 
+                        color: sortedEquity.map(b => {
+                            // Color gradient based on resolution time
+                            if (b.mean < 30) return '#27ae60'; // Green for faster
+                            if (b.mean < 30.3) return '#f39c12'; // Orange for average
+                            return '#e74c3c'; // Red for slower
+                        }),
+                        line: { color: '#fff', width: 2 }
+                    },
+                    text: sortedEquity.map(b => b.mean.toFixed(1) + ' days'),
                     textposition: 'auto',
-                    hovertemplate: '<b>%{x}</b><br>Average: %{y:.1f} days<extra></extra>'
+                    hovertemplate: '<b>%{y}</b><br>%{x:.1f} days average<extra></extra>'
                 }], {
                     title: '',
-                    xaxis: { title: 'Borough' },
-                    yaxis: { title: 'Average Days to Close' },
+                    xaxis: { title: 'Average Days to Close' },
+                    yaxis: { title: '' },
                     showlegend: false,
                     plot_bgcolor: 'rgba(0,0,0,0)',
-                    paper_bgcolor: 'rgba(0,0,0,0)'
+                    paper_bgcolor: 'rgba(0,0,0,0)',
+                    margin: { l: 120, r: 50, t: 20, b: 50 }
                 }, { responsive: true });
             }
             
-            // 6. BOROUGH COMPLAINTS - Top complaints per borough
+            // 6. BOROUGH COMPLAINTS - Data loaded for technical completeness
+            // This visualization is not rendered since the concept is covered by borough-grouped-chart
             const boroughComplaintsRaw = await loadData('borough_complaints.json');
-            if (boroughComplaintsRaw && boroughComplaintsRaw.length > 0) {
-                // Group by borough and complaint
-                const boroughs = [...new Set(boroughComplaintsRaw.map(d => d.borough))];
-                const complaints = [...new Set(boroughComplaintsRaw.map(d => d.complaint))];
-                
-                const traces = complaints.map(complaint => ({
-                    x: boroughs,
-                    y: boroughs.map(borough => {
-                        const data = boroughComplaintsRaw.find(d => d.borough === borough && d.complaint === complaint);
-                        return data ? data.pct : 0;
-                    }),
-                    name: complaint,
-                    type: 'bar'
-                }));
-                
-                Plotly.newPlot('borough-complaints', traces, {
-                    title: '',
-                    xaxis: { title: 'Borough' },
-                    yaxis: { title: 'Complaint Percentage (%)' },
-                    barmode: 'stack',
-                    showlegend: true,
-                    height: 450,
-                    plot_bgcolor: 'rgba(0,0,0,0)',
-                    paper_bgcolor: 'rgba(0,0,0,0)'
-                }, { responsive: true });
-            }
+            // Data available but visualization disabled
             
             // 7. TEMPORAL HEATMAP - Complaint types by month
             const temporalHeatmapRaw = await loadData('complaint_types_by_month.json');
@@ -1264,7 +1174,8 @@
                     y: complaintTypes,
                     type: 'heatmap',
                     colorscale: 'YlOrRd',
-                    colorbar: { title: 'Complaints' }
+                    colorbar: { title: 'Complaint Count' },
+                    hovertemplate: '<b>%{y}</b><br>%{x}: %{z} complaints<extra></extra>'
                 }], {
                     title: '',
                     xaxis: { title: 'Month' },
