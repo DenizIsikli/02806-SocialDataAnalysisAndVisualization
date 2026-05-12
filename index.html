@@ -25,30 +25,58 @@
       color: var(--text);
       background: #fff;
       line-height: 1.78;
+      padding-left: 0px;
     }
 
-    /* ── Nav ─────────────────────────────────────────────── */
-    .top-nav {
-      position: sticky; top: 0; z-index: 100;
+    /* ── Side Nav ────────────────────────────────────────── */
+    .side-nav {
+      position: fixed;
+      left: max(14px, calc(40vw - 565px));
+      top: 1.5rem;
+      width: 300px;
       background: #fff;
-      border-bottom: 1px solid var(--border);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 4px 22px rgba(0,0,0,.08);
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      padding: 2.8rem 1.3rem 1.6rem;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
     }
-    .top-nav a {
+    .side-nav.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .side-nav-title {
       font-family: var(--sans);
-      font-size: .72rem;
-      font-weight: 600;
-      letter-spacing: .12em;
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .15em;
       text-transform: uppercase;
-      color: var(--primary);
-      text-decoration: none;
-      padding: .85rem 1.3rem;
-      border-bottom: 2px solid transparent;
-      transition: border-color .18s, color .18s;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 2.2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--border);
     }
-    .top-nav a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+    .side-nav a {
+      font-family: var(--sans);
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      display: block;
+      padding: .48rem 0 .48rem .8rem;
+      margin-left: -.8rem;
+      border-left: 2px solid transparent;
+      transition: color .15s, border-color .15s;
+    }
+    .side-nav a:hover { color: var(--primary); border-left-color: var(--border); text-decoration: none; }
+    .side-nav a.active { color: var(--accent); border-left-color: var(--accent); }
 
     /* ── Hero ────────────────────────────────────────────── */
     .hero {
@@ -332,6 +360,10 @@
     }
 
     /* ── Responsive ──────────────────────────────────────── */
+    @media (max-width: 1080px) {
+      .side-nav { display: none; }
+      body { padding-left: 0; }
+    }
     @media (max-width: 600px) {
       .hero { padding: 60px 16px 50px; }
       .hero-stats { gap: 1.5rem 2.5rem; }
@@ -342,8 +374,9 @@
 </head>
 <body>
 
-<!-- ═══ NAV ══════════════════════════════════════════════════════════════ -->
-<nav class="top-nav" aria-label="Page sections">
+<!-- ═══ SIDE NAV ══════════════════════════════════════════════════════════ -->
+<nav class="side-nav" aria-label="Page sections">
+  <span class="side-nav-title">NYC 311<br>Investigation</span>
   <a href="#data">The Data</a>
   <a href="#complaints">Complaints</a>
   <a href="#geography">Geography</a>
@@ -835,9 +868,32 @@
       <li id="ref-6">City of New York (2026, March 18). <em>Mayor Mamdani Visits NYC311 Call Center to Thank Staff, Take Calls From NYC Residents</em>. NYC Mayor's Office. <a href="https://www.nyc.gov/mayors-office/news/2026/03/mayor-mamdani-visits-nyc311-call-center-to-thank-staff--take-cal" target="_blank" rel="noopener">nyc.gov</a></li>
       <li id="ref-7">City of New York / New York State (2026, May 12). <em>Governor Hochul and Mayor Mamdani Announce Additional Aid and State Actions to Stabilize New York City's Budget</em>. NYC Mayor's Office. <a href="https://www.nyc.gov/mayors-office/news/2026/05/governor-hochul-and-mayor-mamdani-announce-additional-aid-and-st" target="_blank" rel="noopener">nyc.gov</a></li>
     </ol>
-    <p class="footer-credit">DTU 02806 Social Data Analysis and Visualization &nbsp;·&nbsp; Final Project &nbsp;·&nbsp; 2026</p>
+    <p class="footer-credit">DTU 02806 Social Data Analysis and Visualization &nbsp;·&nbsp; Final Project Part B&nbsp;·&nbsp; 2026</p>
   </div>
 </footer>
 
+<script>
+  const sideNav   = document.querySelector('.side-nav');
+  const navLinks  = document.querySelectorAll('.side-nav a');
+  const sections  = ['data','complaints','geography','time','equity','conclusion']
+    .map(id => document.getElementById(id)).filter(Boolean);
+
+  // Show nav only after hero scrolls out
+  const heroObserver = new IntersectionObserver(([entry]) => {
+    sideNav.classList.toggle('visible', !entry.isIntersecting);
+  }, { threshold: 0.05 });
+  heroObserver.observe(document.querySelector('.hero'));
+
+  // Highlight active section
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+
+  sections.forEach(s => sectionObserver.observe(s));
+</script>
 </body>
 </html>
