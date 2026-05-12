@@ -1,5 +1,5 @@
 # 02806 - Social Data Analysis and Visualization
 
-## Temp
+## Final Project Link
 
 https://denizisikli.github.io/02806-SocialDataAnalysisAndVisualization/
