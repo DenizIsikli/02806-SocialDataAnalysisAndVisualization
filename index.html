@@ -52,10 +52,11 @@
 
     /* ── Hero ────────────────────────────────────────────── */
     .hero {
-      background: linear-gradient(160deg, #111827 0%, #1e293b 100%);
+      background: linear-gradient(165deg, #0d1520 0%, #111827 45%, #1a2740 100%);
       color: #fff;
       text-align: center;
       padding: 90px 24px 80px;
+      border-top: 3px solid var(--accent);
     }
     .hero-eyebrow {
       font-family: var(--sans);
@@ -84,16 +85,22 @@
       font-family: var(--sans);
       font-size: .78rem;
       color: rgba(255,255,255,.38);
-      margin-bottom: 3rem;
+      margin-bottom: 2rem;
     }
     .hero-stats {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 2rem 4.5rem;
-      margin-top: 2.5rem;
+      gap: 2rem 3.5rem;
+      margin-top: 0;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,.12);
     }
-    .stat-box { text-align: center; }
+    .stat-box {
+      text-align: left;
+      padding-left: 1rem;
+      border-left: 2px solid rgba(181,67,30,.5);
+    }
     .stat-num {
       display: block;
       font-size: 2.6rem;
@@ -268,10 +275,15 @@
     }
     .conclusion-box li { margin-bottom: .6rem; line-height: 1.55; }
 
-    /* ── Notebook link ───────────────────────────────────── */
+    /* ── Notebook links ──────────────────────────────────── */
+    .notebook-links {
+      display: flex;
+      gap: .75rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
     .notebook-link {
       display: inline-block;
-      margin-top: 1.5rem;
       padding: .65rem 1.5rem;
       background: var(--primary);
       color: #fff;
@@ -284,6 +296,12 @@
       transition: background .18s;
     }
     .notebook-link:hover { background: #1f2d3f; text-decoration: none; }
+    .notebook-link.secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    .notebook-link.secondary:hover { background: var(--primary); color: #fff; }
 
     /* ── References footer ───────────────────────────────── */
     footer.references {
@@ -530,7 +548,7 @@
     </p>
 
     <figure class="viz-card">
-      <p class="figure-title">NYC 311 Complaints by Borough — Interactive Choropleth</p>
+      <p class="figure-title">NYC 311 Complaints by Borough — Interactive</p>
       <div class="iframe-wrap">
         <iframe src="./final_project/charts/geo_heatmap.html" height="530"
                 title="Interactive choropleth of 311 complaint metrics by NYC borough"></iframe>
@@ -644,14 +662,17 @@
 
     <figure class="viz-card">
       <p class="figure-title">Monthly Complaint Volume vs. Average Resolution Time (2020–2025)</p>
-      <img src="./final_project/images/dual_axis_chart.png"
-           alt="Dual-axis chart showing complaint volume (navy) and resolution time (red dashed) over time">
+      <div class="iframe-wrap">
+        <iframe src="./final_project/charts/dual_axis_interactive.html" height="420"
+                title="Interactive dual-axis chart: monthly complaint volume vs average resolution time"></iframe>
+      </div>
       <figcaption>
         <strong>Fig 4a.</strong> Two metrics on one chart. The navy line (left axis) shows
-        monthly complaint volume — it peaks in summer, dips in COVID April 2020. The brick-red
-        dashed line (right axis) shows average resolution time in days — it fluctuates modestly
-        but holds well below 30 days throughout the period. Even as complaint load swings by
-        tens of thousands of cases per month, the city's response speed remains relatively stable.
+        real monthly complaint totals (full citywide count) — it peaks in summer, dips in
+        COVID April 2020. The brick-red dashed line (right axis) shows average resolution time
+        from the stratified sample — it fluctuates modestly but holds well below 30 days
+        throughout the period. Hover any point for exact figures. Even as complaint load
+        swings by tens of thousands per month, the city's response speed remains stable.
       </figcaption>
     </figure>
 
@@ -741,9 +762,35 @@
       fairly. The harder work is ensuring that the underlying conditions also converge.
     </p>
 
+    <p class="intro-text">
+      That harder convergence now has a financial foundation. In May 2026, Governor Hochul
+      and Mayor Mamdani announced $4 billion in additional state aid — bringing total new
+      state support to nearly $8 billion over two years — officially closing the more than
+      $12 billion deficit the administration inherited. The budget agreement explicitly protects
+      libraries, school funding, public safety, and infrastructure, while adding universal free
+      childcare. For a dataset that registers chronic under-heating in winter-exposed buildings,
+      aging pipes, and noise in dense neighborhoods, this matters concretely: the capital
+      investments that would most compress the HEAT/HOT WATER complaint curve — building system
+      retrofits and weatherization in the Bronx and Manhattan precincts where heat complaints
+      concentrate — now have a fiscal context that wasn't available a year ago. Whether that
+      capital reaches the buildings that generate the most winter distress calls will, in part,
+      be legible in the 311 data that follows.<sup><a href="#ref-7">[7]</a></sup>
+    </p>
+
+    <p class="intro-text">
+      Since its launch in March 2003, NYC311 has received more than 650 million contacts —
+      growing from 4 million calls in its first year to <strong>36 million contacts in 2025</strong>,
+      including 17 million phone calls, 16.4 million web visits, and 2.6 million app interactions.
+      More than 100,000 New Yorkers reach 311 every single day, and the service maintains a 93%
+      customer satisfaction score across more than 175 languages. When a February 2026 blizzard
+      hit the city, New Yorkers made 800,000 contacts in four days — demonstrating that 311
+      functions not just as a routine service channel but as a critical public infrastructure link
+      during emergencies.<sup><a href="#ref-6">[6]</a></sup>
+    </p>
+
     <div class="conclusion-grid">
       <div class="conclusion-box">
-        <h3>&#10004; What the Data Shows</h3>
+        <h3>What the Data Shows</h3>
         <ul>
           <li>Illegal Parking (12.6%) and Noise - Residential (11.7%) are the top single categories; all noise types combined account for 22.4% of all calls</li>
           <li>HEAT/HOT WATER (7.3%) is the top infrastructure complaint — growing 17% over recent years as building systems age</li>
@@ -753,7 +800,7 @@
         </ul>
       </div>
       <div class="conclusion-box">
-        <h3>&#9888; Limitations</h3>
+        <h3>Limitations</h3>
         <ul>
           <li>This analysis uses a <strong>stratified sample</strong>: 14,000 records per month × 72 months = 1,008,000 records, roughly 5% of all NYC 311 calls filed 2020–2025; each month's sample is the earliest 14k by created_date, not a random draw</li>
           <li>311 data reflects what residents <em>report</em>, not the full scope of problems; communities with low institutional trust or fear of landlord retaliation systematically under-report</li>
@@ -769,7 +816,10 @@
       of all seven required sections — including the Segel &amp; Heer (2010) narrative
       visualization framework applied to this project — see the Explainer Notebook.
     </p>
-    <a href="./final_project/analysis/NYC_311_Analysis.ipynb" class="notebook-link">Open Explainer Notebook</a>
+    <div class="notebook-links">
+      <a href="./final_project/analysis/NYC_311_Analysis.ipynb" class="notebook-link" download>Download Explainer Notebook</a>
+      <a href="https://github.com/DenizIsikli/02806-SocialDataAnalysisAndVisualization/blob/main/final_project/analysis/NYC_311_Analysis.ipynb" class="notebook-link secondary" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
   </div>
 </section>
 
@@ -783,6 +833,8 @@
       <li id="ref-3">Staten Island Advance / SILive.com (2025, October). Staten Islanders have made nearly 100K 311 calls in 2025: Here are the most common complaints. <a href="https://www.silive.com/data/2025/10/staten-islanders-have-made-nearly-100k-311-calls-in-2025-here-are-the-most-common-complaints.html" target="_blank" rel="noopener">silive.com</a></li>
       <li id="ref-4">New York City Comptroller (2025). <em>Turn Up the Heat — 2025 Update</em>. New York City Comptroller's Office. <a href="https://comptroller.nyc.gov/reports/turn-up-the-heat-2025-update/" target="_blank" rel="noopener">comptroller.nyc.gov</a></li>
       <li id="ref-5">City Limits (2025). How NYC Closed Tens of Thousands of No-Heat Complaints Without Conducting an Inspection. <a href="https://citylimits.org/how-nyc-closed-tens-of-thousands-of-no-heat-complaints-without-conducting-an-inspection/" target="_blank" rel="noopener">citylimits.org</a></li>
+      <li id="ref-6">City of New York (2026, March 18). <em>Mayor Mamdani Visits NYC311 Call Center to Thank Staff, Take Calls From NYC Residents</em>. NYC Mayor's Office. <a href="https://www.nyc.gov/mayors-office/news/2026/03/mayor-mamdani-visits-nyc311-call-center-to-thank-staff--take-cal" target="_blank" rel="noopener">nyc.gov</a></li>
+      <li id="ref-7">City of New York / New York State (2026, May 12). <em>Governor Hochul and Mayor Mamdani Announce Additional Aid and State Actions to Stabilize New York City's Budget</em>. NYC Mayor's Office. <a href="https://www.nyc.gov/mayors-office/news/2026/05/governor-hochul-and-mayor-mamdani-announce-additional-aid-and-st" target="_blank" rel="noopener">nyc.gov</a></li>
     </ol>
     <p class="footer-credit">DTU 02806 Social Data Analysis and Visualization &nbsp;·&nbsp; Final Project &nbsp;·&nbsp; 2026</p>
   </div>
